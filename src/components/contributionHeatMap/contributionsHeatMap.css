@@ -1,0 +1,15 @@
+.monthHeatMapContainer{
+    display: grid;
+    overflow-x: scroll;
+    max-width: 100%;
+}
+.dayHeatPoint{
+    background-color: green;
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+}
+
+.dayHeatPoint:hover{
+    background-color: var(--primary-color);
+}

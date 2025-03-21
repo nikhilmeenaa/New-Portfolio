@@ -1,0 +1,45 @@
+:root {
+  /* --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255; */
+  --primary-color: #343434;
+  --primary-color-dark: #225bb3;
+  --primary-color-light: #5dace4;
+  --off-black: #626262;
+  --light-grey: #dedcdc;
+  --abs-white: #ffffff;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: black;
+  font-family: 'Axiform', sans-serif;
+  background-color: white;
+  position: fixed;
+  display: flex;
+  top: 0;bottom: 0;
+  left: 0;
+  right: 0;
+  justify-content: center;
+}
+
+.appWindow{
+  width: 60vw;
+  height: auto;
+  overflow: scroll;
+}
+
+.appWindow {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+.appWindow::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}

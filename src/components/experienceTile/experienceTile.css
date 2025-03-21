@@ -1,0 +1,52 @@
+.ExperienceTile{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border: 1px solid var(--light-grey);
+    height: 10rem;
+}
+
+.ExperienceTile .logoSection{
+    width: 27%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.logoSection img{
+    max-width: 80%;
+    height: auto;
+}
+
+.infoSection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0.6rem;
+    width: 100%;
+}
+
+.headingSection{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.companyRole{
+    font-size: 1.3rem;
+    color: var(--primary-color);
+}
+
+.timeDuration{
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+.experienceDescription{
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}

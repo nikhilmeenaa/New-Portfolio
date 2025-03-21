@@ -1,0 +1,45 @@
+.navbarContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.logoSection{
+    font-size: 1.3rem;
+}
+
+.ninjaAnimation{
+    height: 5rem;
+}
+
+.routesSection{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.8rem;
+}
+
+.routesInstance{
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+.routesInstance .routesInstanceText{
+    font-size: 1rem;
+}
+
+.activeRoutesInstance{
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.activeRoutesInstance .routesInstanceText{
+    font-size: 1.1rem;
+    color: white;
+}

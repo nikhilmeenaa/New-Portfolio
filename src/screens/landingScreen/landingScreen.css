@@ -1,0 +1,51 @@
+.LandingScreenContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+.landingPageAboutMeSection{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.4rem;
+}
+
+.landingPageAboutMeSection span{
+  font-size: 1rem;
+}
+
+.SectionHeading {
+  font-size: 1.2rem;
+}
+
+.ProjectsSection{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.7rem;
+}
+
+.ContributionsSection{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.7rem;
+}
+
+.SocialsSection{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+}
+
+.CopyRightSection{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem 0;
+}

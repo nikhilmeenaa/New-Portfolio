@@ -1,0 +1,46 @@
+.projectSectionTile{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    border: 1px solid var(--light-grey);
+    height: 20rem;
+}
+
+.projectLogoSection{
+    height: 50%;
+    position: relative;
+}
+/* .projectLogoSection img{
+    max-height: 100%;
+    max-width: 100%;
+} */
+
+.DescriptionSection{
+    flex-grow: 1;
+    padding: 0 1rem;
+}
+
+.githubLiveDemoSection{
+    height: 15%;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    padding-top: 0rem;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.githubLiveDemoSection img{
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.githubLiveDemoSection img:hover{
+    transform: scale(1.1);
+}
+
+.githubLiveDemoSection span{
+    font-size: 0.9rem;
+    cursor: pointer;
+}

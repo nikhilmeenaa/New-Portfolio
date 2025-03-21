@@ -1,0 +1,112 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+//  ------ Users -------
+
+// id object id
+// name: name of user
+// email: email of user
+// hashPassword: hashedPassword of user
+// isVerified: user is verified 
+// createdAt: creation time of user
+// updatedAt: updated time of user
+// phone: phone number of user
+// countryCode: mobile country of user
+// photoId: photo, which will be link to photo which is going to be used to match photos
+// bankDetails: bank details of user
+// balance: balance of user
+
+model users {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  name String?
+  email String @unique
+  hashPassword String?
+  isVerified Boolean @default(false)
+  phoneNo String?
+  countryCode String?
+  photoId String?
+  bankDetails Json?
+  balance Int @default(0)
+  createdAt DateTime
+  updatedAt DateTime
+}
+
+
+//  ------ Forgot Password -------
+
+// id object id
+// userId: id of user for which the account verification link got generated
+// createdAt: creation time
+// valid till: time before which link is valid
+// validated: whether the successfully verified the account
+
+model user_verification {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  userId String @db.ObjectId
+  createdAt DateTime
+  validTill DateTime
+  validated Boolean
+}
+
+//  ------ Forgot Password -------
+
+// id object id
+// userId: id of user for which the password reset link was created
+// createdAt: creation time
+// valid till: time before which link is valid
+// resetDone: whether the link generated has been used to reset the password
+
+model forgot_password{
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  userId String @db.ObjectId
+  createdAt DateTime
+  validTill DateTime
+  resetDone Boolean
+}
+
+
+
+
+// ------Links Schema-------
+
+// id : object id of string
+// name : this will store name of the link given by user
+// userId: id of user who created that link
+// linkUrl : the actual link url, which user wants to shorten
+// noOfvisits : number of visits on that url
+// adsEnabled : whether ads are enabled or not
+// revenue : the revenue ads has generated 
+// platform : name of platform of the final destination where link will take
+// analytics : object which will store analytics time wise views, revenue generated, ads shown their number, region, heatmap
+// searchTags : user can give tags which will help user to separate out and search links easily with tags
+// contentType : there will certain types of content from which admin user can select
+// adsConfiguration : configuration of the ads what type of ads to be shown
+
+model link{
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  name String
+  userId String @db.ObjectId 
+  linkUrl String
+  noOfVisits Int
+  adsEnabled Boolean
+  revenue Int
+  platform String?
+  analytics Json?
+  searchTags String[]
+  contentType String?
+  adsConfiguration Json?
+  createdAt DateTime
+  updatedAt DateTime
+}

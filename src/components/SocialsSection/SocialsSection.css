@@ -1,0 +1,14 @@
+.socialsSectionContainer{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.socialsSectionContainer img{
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.socialsSectionContainer img:hover{
+    transform: scale(1.1);
+}

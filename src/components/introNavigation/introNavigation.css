@@ -1,0 +1,83 @@
+@keyframes introScreenBottomToTopAnimation {
+    from {
+        bottom: 0;
+    }
+    to{
+        bottom: 110vh;
+        background-color: var(--primary-color);
+    }
+}
+
+
+.introNavigationContainer{
+    display: flex;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    background-color: white;
+    animation-name: introScreenBottomToTopAnimation;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-delay: 1.8s;
+}
+
+@keyframes wordsContainerWrapperAnimation {
+    from {
+    }
+    to{
+        opacity: 0;
+        z-index: -1;
+        visibility:hidden;
+    }
+}
+
+
+.wordsContainerWrapper{
+    display: flex;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    animation-name: wordsContainerWrapperAnimation;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 1.8s;
+}
+
+.wordsContainer{
+    height: 100px;
+    display: flex;
+}
+
+@keyframes characteranimation {
+    from {
+        transform: translateY(0rem); /* Start from initial position */
+    }
+    to {
+        transform: translateY(-1rem); /* Move up by 1rem */
+        opacity: 1;
+    }
+}
+
+.characterInstance {
+    padding: auto 0.1rem;
+    font-size: 2.2rem;
+    font-weight: 600;
+    animation-name: characteranimation;
+    animation-duration: 0.15s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    /* animation-timing-function: ease-in-out; Smooth transition */
+    animation-timing-function: ease-out;
+}

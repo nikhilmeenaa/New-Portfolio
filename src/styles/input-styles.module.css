@@ -1,0 +1,37 @@
+.input {
+  width: 100%;
+}
+.ant-picker-dropdown {
+  z-index: 1056;
+}
+.label {
+  font-weight: 400;
+  color: var(--off-black);
+  color: red;
+  margin-bottom: 3px;
+}
+
+.inputField {
+  font-size: 2rem;
+}
+
+.inputField input {
+  color: red;
+}
+
+.contact_details_padding {
+  padding-left: 0.5em;
+  width: 100%;
+}
+
+.close_icon {
+  margin-right: 10px;
+}
+
+.green-background .delete-icon {
+  color: white;
+}
+
+.white-background .delete-icon {
+  color: black;
+}

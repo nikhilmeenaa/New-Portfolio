@@ -1,0 +1,21 @@
+version: '3'
+services:
+  # react-app:
+  #   build: .
+  #   ports:
+  #     - '3000:3000'
+  #   volumes:
+  #     - .:/app
+  #     - /app/node_modules
+  #   stdin_open: true
+  #   tty: true
+  redis:
+    image: redis:alpine
+    container_name: my-redis
+    ports:
+      - '6379:6379'
+    volumes:
+      - redis_data:/data
+
+volumes:
+  redis_data:
