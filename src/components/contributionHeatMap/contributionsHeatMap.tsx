@@ -125,13 +125,14 @@ const MonthHeatMap = ({
         overflowX: "scroll",
         maxWidth: "100%",
       }}
+      className="mapHeatSection"
     >
       <div
         style={{
           position: "relative",
           display: "flex",
           flexDirection: "column",
-          gap: "0.3rem",
+          gap: "0.5rem",
         }}
       >
         <div
@@ -143,7 +144,7 @@ const MonthHeatMap = ({
         >
           {getMonthsNames().map((monthName, monthIndex) => {
             return (
-              <div style={{ fontSize: "0.7rem" }} key={monthName + monthIndex}>
+              <div style={{ fontSize: "0.9rem" }} key={monthName + monthIndex}>
                 {monthName}
               </div>
             );

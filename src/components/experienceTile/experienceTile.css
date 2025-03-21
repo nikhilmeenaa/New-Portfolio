@@ -5,7 +5,28 @@
     padding: 1rem;
     border: 1px solid var(--light-grey);
     height: 10rem;
+    border-radius: 7px;
+    background-color: rgba(255, 255, 255, 0.6);
+    z-index: 10;
+    transition: ease;
+    transition-duration: 0.2s;
 }
+
+.ExperienceTile:hover{
+    transform: scale(1.02);
+}
+
+
+@keyframes textShine {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+  
+
 
 .ExperienceTile .logoSection{
     width: 27%;
@@ -27,26 +48,79 @@
     justify-content: space-around;
     gap: 0.6rem;
     width: 100%;
+    background: linear-gradient(
+        to right,
+        #373737 30%,
+        #bbbbbb 70%,
+        #323232 80%
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-fill-color: transparent;
+      background-size: 500% auto;
+      animation: textShine 2s linear;
+      animation-direction: reverse;
 }
 
 .headingSection{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     width: 100%;
+    color: rgb(87, 87, 87);
 }
 
 .companyRole{
-    font-size: 1.3rem;
+    font-size: 1.35rem;
     color: var(--primary-color);
+    background: linear-gradient(
+        to right,
+        #373737 30%,
+        #bbbbbb 70%,
+        #323232 80%
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-fill-color: transparent;
+      background-size: 500% auto;
+      animation: textShine 2s linear;
+      animation-direction: reverse;
 }
 
 .timeDuration{
     color: var(--primary-color);
     font-size: 0.9rem;
+    background: linear-gradient(
+        to right,
+        #373737 30%,
+        #bbbbbb 70%,
+        #323232 80%
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-fill-color: transparent;
+      background-size: 500% auto;
+      animation: textShine 2s linear;
+      animation-direction: reverse;
 }
 
 .experienceDescription{
     color: var(--primary-color);
-    font-size: 0.9rem;
+    font-size: 1.1rem;
+    background: linear-gradient(
+        to right,
+        #373737 30%,
+        #bbbbbb 70%,
+        #323232 80%
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-fill-color: transparent;
+      background-size: 500% auto;
+      animation: textShine 2s linear;
+      animation-direction: reverse;
 }

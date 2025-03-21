@@ -11,18 +11,18 @@ const navBarRoutesData = [
     isActive: false,
     url: "/",
   },
-  {
-    label: "About",
-    urlKey: "/about",
-    isActive: false,
-    url: "/about",
-  },
-  {
-    label: "Blogs",
-    urlKey: "/blogs",
-    isActive: false,
-    url: "/blogs",
-  },
+  // {
+  //   label: "About",
+  //   urlKey: "/about",
+  //   isActive: false,
+  //   url: "/about",
+  // },
+  // {
+  //   label: "Blogs",
+  //   urlKey: "/blogs",
+  //   isActive: false,
+  //   url: "/blogs",
+  // },
 ];
 
 const Navbar = () => {

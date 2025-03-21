@@ -5,7 +5,28 @@
     align-items: center;
     border: 1px solid var(--light-grey);
     height: 20rem;
+    border-radius: 7px;
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 10;
+    transition: ease;
+    transition-duration: 0.2s;
 }
+
+.projectSectionTile:hover{
+    transform: scale(1.02);
+}
+  
+  .container {
+    font-family: sans-serif;
+    color: #3c3c3c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    flex-direction: column;
+  }
+  
+
 
 .projectLogoSection{
     height: 50%;
@@ -16,9 +37,36 @@
     max-width: 100%;
 } */
 
+
+@keyframes textShine {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+
 .DescriptionSection{
     flex-grow: 1;
     padding: 0 1rem;
+    font-size: 1.2rem;
+    text-align: center;
+    /* font-size: clamp(2.8rem, 1.5vw, 3rem); */
+    margin: 5px;
+    background: linear-gradient(
+      to right,
+      #373737 30%,
+      #bbbbbb 70%,
+      #323232 80%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    background-size: 500% auto;
+    animation: textShine 3s linear infinite reverse;
 }
 
 .githubLiveDemoSection{

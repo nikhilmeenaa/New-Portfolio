@@ -5,6 +5,7 @@ const useNavbar = () => {
 
   const checkIfRouteIsActive = (urlKey: string) => {
     return window.location.pathname.includes(urlKey);
+    // return false;
   };
 
   const handleRouteClick = (route: string) => {

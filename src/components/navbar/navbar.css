@@ -12,7 +12,15 @@
 
 .ninjaAnimation{
     height: 5rem;
+    cursor: pointer;
+    transition: ease;
+    transition-duration: 0.2s;
 }
+
+.ninjaAnimation{
+    transform: scale(1.04);
+}
+
 
 .routesSection{
     display: flex;
@@ -29,7 +37,7 @@
 }
 
 .routesInstance .routesInstanceText{
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 .activeRoutesInstance{

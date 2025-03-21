@@ -25,6 +25,10 @@ export default function RootLayout({
                 <div>{children}</div>
               </div>
               <IntroNavigation />
+              <div id="bigBox">
+                <div id="box"></div>
+                <div id="box2"></div>
+              </div>
             </body>
           </ConfigProvider>
         </AntdRegistry>

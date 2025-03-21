@@ -11,8 +11,13 @@ const LandingScreen = () => {
   return (
     <div className="LandingScreenContainer">
       <div className="landingPageAboutMeSection">
-        <span className="landingPageSalutation">{landingPageSalutation}</span>
-        <span className="landingPageAboutMeText">{aboutMeLandingPage}</span>
+        <div className="SectionHeading" style={{ marginBottom: "0.5rem" }}>
+          About
+        </div>
+        <div className="landingPageAboutMeSectionContainer">
+          <span className="landingPageSalutation">{landingPageSalutation}</span>
+          <span className="landingPageAboutMeText">{aboutMeLandingPage}</span>
+        </div>
       </div>
       <div className="ProjectsSection">
         <div className="SectionHeading">Experience</div>

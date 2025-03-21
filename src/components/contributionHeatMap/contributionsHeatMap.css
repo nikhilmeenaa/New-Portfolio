@@ -1,3 +1,8 @@
+.mapHeatSection{
+    border : 1px solid var(--light-grey);
+    padding: 1rem;
+}
+
 .monthHeatMapContainer{
     display: grid;
     overflow-x: scroll;
