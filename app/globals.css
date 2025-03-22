@@ -22,19 +22,20 @@ body {
   color: black;
   font-family: 'Axiform', sans-serif;
   background-color: white;
-  position: fixed;
+  /* position: fixed; */
   display: flex;
-  top: 0;bottom: 0;
+  /* top: 0;bottom: 0;
   left: 0;
-  right: 0;
+  right: 0; */
   justify-content: center;
+  padding: 0 23vw;
 }
 
 .appWindow{
-  width: 60vw;
-  height: auto;
+  /* width: 60vw; */
+  /* height: auto;
   overflow: scroll;
-  padding: 0 1rem;
+  padding: 0 1rem; */
 }
 
 .appWindow {

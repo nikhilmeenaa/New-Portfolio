@@ -7,7 +7,7 @@ export interface ExperienceTileInterface {
     experienceDescription: string;
     startDate: string;
     endDate: string;
-    technologiesUsed: {technologyName:string, technologyImage:  StaticImageData }[]
+    // technologiesUsed: {technologyName:string, technologyImage:  StaticImageData }[]
 }
 export interface ProjectTileInterface {
     projectLogo: StaticImageData;

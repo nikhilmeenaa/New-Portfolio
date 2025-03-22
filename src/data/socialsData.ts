@@ -3,9 +3,10 @@ import GithubIcon from '../assets/logo/github.png';
 import InstagramIcon from '../assets/logo/instagram.png';
 import GmailIcon from '../assets/logo/gmail.png';
 import YoutubeIcon from '../assets/logo/youtube.png';
+import { StaticImageData } from 'next/image';
 
 
-const socialsData = [
+const socialsData: {name: string, logo: StaticImageData, url: string}[] = [
     {
         name: "LinkedIn",
         logo: LinkedinIcon,

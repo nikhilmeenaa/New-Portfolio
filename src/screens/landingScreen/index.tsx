@@ -35,11 +35,11 @@ const LandingScreen = () => {
       </div>
 
       <div className="ContributionsSection">
-        <div className="SectionHeading">Contributions</div>
+        <div className="SectionHeading">Github contributions</div>
         <MonthHeatMap
-          startMonth={1}
-          startYear={2025}
-          endMonth={12}
+          startMonth={4}
+          startYear={2024}
+          endMonth={3}
           endYear={2025}
         />
       </div>

@@ -1,0 +1,45 @@
+.technologiesListContainer {
+  }
+  
+  @keyframes technologyIconAnimation {
+    0% {
+      /* margin-bottom: 0; */
+      /* translate: 0 0; */
+      /* rotate: 0deg; */
+    }
+    50% {
+      margin-bottom: 0;
+      translate: 0 6px;
+      /* rotate: 180deg; */
+    }
+    100% {
+      margin-top: 0;
+      /* rotate: 1080deg; */
+      /* right: 100px; */
+    }
+  }
+  
+  .logoImg {
+    /* rotate: 90deg; */
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid rgb(136, 136, 136);
+    /* transition: ; */
+    transition-duration: 0.20s;
+    animation-timing-function: ease-out;
+    animation-duration: 0.20s;
+    animation-name: technologyIconAnimation;
+    animation-iteration-count: 1;
+    height: 35px;
+    width: 35px;
+    padding: 4px;
+  }
+  
+  img:hover {
+    z-index: 1000;
+    cursor: pointer;
+    /* border: 1px solid red; */
+    /* scale: 1.1; */
+    /* animation-name: technologyIconAnimation; */
+  }
+  

@@ -1,5 +1,6 @@
+import contributionsData from "@/src/data/contributionData";
 import "./contributionsHeatMap.css";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const MonthHeatMap = ({
   startMonth,
@@ -12,6 +13,9 @@ const MonthHeatMap = ({
   startYear: number;
   endYear: number;
 }) => {
+  const [contributionCountMap, setContributionCountMap] = useState<
+    Map<string, number>
+  >(new Map());
   // Function to get the number of days in a given month and year
   function getDaysInMonth(year: number, month: number) {
     return new Date(year, month, 0).getDate();
@@ -87,7 +91,7 @@ const MonthHeatMap = ({
       ) {
         const monthName = new Date(currentYear, currentMonth, 0).toLocaleString(
           "default",
-          { month: "long" }
+          { month: "short" }
         );
         tempMonthsName.push(monthName);
 
@@ -112,18 +116,82 @@ const MonthHeatMap = ({
       ((getStartingGap() + monthDates.length + 6) / 7).toString()
     );
     setNumberOfColumns(tempNumberOfColumns);
+    const tempContributionCountMap: Map<string, number> = new Map();
+    contributionsData.forEach((data) => {
+      tempContributionCountMap.set(data.date, data.contributionCount);
+    });
+    setContributionCountMap(tempContributionCountMap);
   }, []);
+
+  const ContributionInstance = ({
+    index,
+    day,
+    contributionsCount,
+  }: {
+    index: number;
+    day: Date;
+    contributionsCount: number;
+  }) => {
+    const [isHovered, setIsHovered] = useState(false);
+    const [tooltipContent, setTooltipContent] = useState("");
+
+    const handleMouseEnter = () => {
+      setIsHovered(true);
+      setTooltipContent(
+        contributionsCount + " contributions made on " + day.toDateString()
+      ); // Example content
+    };
+
+    const handleMouseLeave = () => {
+      setIsHovered(false);
+      setTooltipContent(""); // Clear content when not hovering
+    };
+
+    return (
+      <div
+        onMouseEnter={() => handleMouseEnter()}
+        onMouseLeave={handleMouseLeave}
+        key={index}
+        style={{
+          gridRowStart: parseInt(
+            (1 + ((index + getStartingGap()) % 7)).toString()
+          ),
+          gridColumnStart: parseInt(
+            ((index + 7 + getStartingGap()) / 7).toString()
+          ),
+          // opacity: contributionsCount ? 0.1 * contributionsCount : 0.1,
+          position: "relative",
+          // backgroundColor: contributionsCount > 0 ? "green" : "black",
+          // transition: "opacity 0.3s ease-in-out",
+        }}
+        className="dayHeatPoint"
+      >
+        <div
+          style={{
+            height: "100%",
+            width: "100%",
+            opacity: contributionsCount ? 0.2 * contributionsCount : 0.1,
+            position: "relative",
+            backgroundColor: contributionsCount > 0 ? "green" : "black",
+            transition: "opacity 0.3s ease-in-out",
+          }}
+        ></div>
+        {isHovered && <div className="tooltip">{tooltipContent}</div>}
+      </div>
+    );
+  };
 
   return (
     <div
       style={{
         display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "space-around",
+        // flexDirection: "column",
+        // alignItems: "center",
+        // justifyContent: "space-around",
         gap: "10px",
         overflowX: "scroll",
         maxWidth: "100%",
+        padding: "1rem",
       }}
       className="mapHeatSection"
     >
@@ -144,7 +212,10 @@ const MonthHeatMap = ({
         >
           {getMonthsNames().map((monthName, monthIndex) => {
             return (
-              <div style={{ fontSize: "0.9rem" }} key={monthName + monthIndex}>
+              <div
+                style={{ fontSize: "0.9rem", textAlign: "center" }}
+                key={monthName + monthIndex}
+              >
                 {monthName}
               </div>
             );
@@ -162,24 +233,21 @@ const MonthHeatMap = ({
         >
           {getDatesForWholeYear().map((day, index) => {
             return (
-              <div
-                key={index}
-                style={{
-                  gridRowStart: parseInt(
-                    (1 + ((index + getStartingGap()) % 7)).toString()
-                  ),
-                  gridColumnStart: parseInt(
-                    ((index + 7 + getStartingGap()) / 7).toString()
-                  ),
-                  opacity: Math.random(),
-                }}
-                className="dayHeatPoint"
-              >
-                {/* {index} */}
-              </div>
+              <ContributionInstance
+                day={day}
+                index={index}
+                contributionsCount={
+                  contributionCountMap.has(day.toISOString().split("T")[0])
+                    ? contributionCountMap.get(
+                        day.toISOString().split("T")[0]
+                      ) || 0
+                    : 0
+                }
+              />
             );
           })}
         </div>
+        <div>{contributionsData.length} contributions in the last year</div>
       </div>
     </div>
   );

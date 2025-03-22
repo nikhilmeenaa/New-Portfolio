@@ -1,6 +1,7 @@
 .mapHeatSection{
     border : 1px solid var(--light-grey);
     padding: 1rem;
+    border-radius: 7px;
 }
 
 .monthHeatMapContainer{
@@ -9,12 +10,39 @@
     max-width: 100%;
 }
 .dayHeatPoint{
-    background-color: green;
+    /* background-color: green; */
     height: 15px;
     width: 15px;
     cursor: pointer;
 }
 
 .dayHeatPoint:hover{
-    background-color: var(--primary-color);
+    border: 1px solid var(--light-grey);
+}
+
+.tooltip {
+    position: absolute;
+    bottom: 100%; /* Place it above the div */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 1000;
+    animation-duration: 0.2s;
+    animation-timing-function: ease;
+    animation-name: contributionToopTipAnimation;
+    z-index: 1000;
+  }
+
+@keyframes contributionToopTipAnimation {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
 }
