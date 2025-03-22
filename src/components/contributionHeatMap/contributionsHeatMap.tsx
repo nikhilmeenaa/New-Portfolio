@@ -1,3 +1,4 @@
+"use client";
 import contributionsData from "@/src/data/contributionData";
 import "./contributionsHeatMap.css";
 import { useEffect, useRef, useState } from "react";
@@ -234,6 +235,7 @@ const MonthHeatMap = ({
           {getDatesForWholeYear().map((day, index) => {
             return (
               <ContributionInstance
+                key={"contributionsInstance" + index}
                 day={day}
                 index={index}
                 contributionsCount={

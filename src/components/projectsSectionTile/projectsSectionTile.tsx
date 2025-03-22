@@ -2,9 +2,8 @@
 import { ProjectTileInterface } from "@/src/interfaces/frontendInterfaces";
 import Image from "next/image";
 import GithubLogo from "../../assets/icons/github.png";
-import "./projectsSectionTile.css";
-import { useRouter } from "next/navigation";
 import TechnologiesList from "../TechnologiesComponent/Technologies";
+import "./projectsSectionTile.css";
 
 const ProjectSectionTile = (data: ProjectTileInterface) => {
   const handleGoToGithubrepo = (repository: string) => {
