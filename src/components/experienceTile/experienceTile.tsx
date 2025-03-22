@@ -1,6 +1,6 @@
 import { ExperienceTileInterface } from "@/src/interfaces/frontendInterfaces";
 import Image from "next/image";
-import "./ExperienceTile.css";
+import "./experienceTile.css";
 
 const ExperienceTile = (data: ExperienceTileInterface) => {
   return (
