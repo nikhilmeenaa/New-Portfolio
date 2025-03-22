@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding-left: 1rem;
+    padding-left: 0.3rem;
 }
 
 .socialsSectionContainer img{
@@ -11,5 +11,5 @@
 }
 
 .socialsSectionContainer img:hover{
-    transform: scale(1.1);
+    transform: scale(1.08);
 }

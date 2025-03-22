@@ -7,32 +7,42 @@ import FilterLogo from '../assets/icons/filter.jpg';
 
 const projectsData: ProjectTileInterface[] = [
     {
-        projectName: "Online Collaboard",
-        projectDescription: "Collaboard is online drawing application, which allows multiple user to create rooms to draw together.",
+        projectName: "Collaborative Drawing Board",
+        projectDescription: "Collaborative Drawing Board",
         projectLogo : PenLogo,
         githubLink: "https://github.com/nikhilmeenaa/whiteboard",
-        liveDemoLink: "https://board-3254.onrender.com/"
+        liveDemoLink: "https://board-3254.onrender.com/",
+        backgroundColor: "#28183A",
+        textColor: "#D6CAE2",
+        technologiesUsed: []
     },
-    {
-        projectName: "VS Commit Automate",
-        projectDescription: "VS Code extension, which analyzes changes done and automates writing commit message for you.",
-        projectLogo : GitLogo,
-        githubLink: "https://github.com/nikhilmeenaa/AI-GitCommits",
-        liveDemoLink: ""
-    },
+    // {
+    //     projectName: "VS Commit Automate",
+    //     projectDescription: "VS Code extension, which analyzes changes done and automates writing commit message for you.",
+    //     projectLogo : GitLogo,
+    //     githubLink: "https://github.com/nikhilmeenaa/AI-GitCommits",
+    //     liveDemoLink: ""
+    // },
     {
         projectName: "AceType",
-        projectDescription: "Acetype, is a typing practise application, makes user practise the english language patterns along with normal typing practise.... ",
+        projectDescription: "AceType",
         projectLogo : KeyboardLogo,
         githubLink: "https://github.com/nikhilmeenaa/Type-Ace",
-        liveDemoLink: "https://acetype.onrender.com/"
+        liveDemoLink: "https://acetype.onrender.com/",
+        backgroundColor: "black",
+        textColor: "#D6CAE2",
+        technologiesUsed: []
+
     },
     {
         projectName: "LinkedIn Posts Filter",
-        projectDescription: "Chrome extension to filter Linkedin feed, removing non hiring posts, with dash to filter cotent based on user preferences",
+        projectDescription: "LinkedIn Posts Filter",
         projectLogo : FilterLogo,
         githubLink: "https://github.com/nikhilmeenaa/linkedin-posts-filter-llm-and-static",
-        liveDemoLink: "https://chromewebstore.google.com/detail/linkedin-posts-filter/lgjobdoomhngeepifkmdjfecdagnfcah?pli=1"
+        liveDemoLink: "https://chromewebstore.google.com/detail/linkedin-posts-filter/lgjobdoomhngeepifkmdjfecdagnfcah?pli=1",
+        backgroundColor: "white", 
+        textColor: "black",
+        technologiesUsed: []
     },
 ]
 export default projectsData;

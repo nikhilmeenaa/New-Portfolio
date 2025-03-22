@@ -7,6 +7,7 @@ export interface ExperienceTileInterface {
     experienceDescription: string;
     startDate: string;
     endDate: string;
+    technologiesUsed: {technologyName:string, technologyImage:  StaticImageData }[]
 }
 export interface ProjectTileInterface {
     projectLogo: StaticImageData;
@@ -14,4 +15,7 @@ export interface ProjectTileInterface {
     projectDescription: string;
     githubLink: string;
     liveDemoLink: string;
+    backgroundColor: string;
+    textColor: string;
+    technologiesUsed: {technologyName:string, technologyImage:  StaticImageData }[]
 }

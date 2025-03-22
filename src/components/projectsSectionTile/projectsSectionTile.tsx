@@ -16,11 +16,16 @@ const ProjectSectionTile = (data: ProjectTileInterface) => {
     }
   };
   return (
-    <div className="projectSectionTile">
+    <div
+      className="projectSectionTile"
+      style={{ backgroundColor: data.backgroundColor }}
+    >
       <div className="projectLogoSection">
-        <Image src={data.projectLogo} alt={data.projectName} height={150} />
+        <Image src={data.projectLogo} alt={data.projectName} />
       </div>
-      <div className="DescriptionSection">{data.projectDescription}</div>
+      <div className="DescriptionSection" style={{ color: data.textColor }}>
+        {data.projectDescription}
+      </div>
       <div className="githubLiveDemoSection">
         <Image
           src={GithubLogo}
@@ -29,7 +34,10 @@ const ProjectSectionTile = (data: ProjectTileInterface) => {
           height={40}
           onClick={() => handleGoToGithubrepo(data.githubLink)}
         />
-        <span onClick={() => handleGoToLiveDemp(data.liveDemoLink)}>
+        <span
+          onClick={() => handleGoToLiveDemp(data.liveDemoLink)}
+          style={{ color: data.textColor }}
+        >
           Live Demo
         </span>
       </div>

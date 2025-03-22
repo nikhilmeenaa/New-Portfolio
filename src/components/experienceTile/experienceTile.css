@@ -13,7 +13,7 @@
 }
 
 .ExperienceTile:hover{
-    transform: scale(1.02);
+    transform: scale(1.005);
 }
 
 
@@ -61,6 +61,7 @@
       background-size: 500% auto;
       animation: textShine 2s linear;
       animation-direction: reverse;
+      animation-delay: 3s;
 }
 
 .headingSection{
@@ -72,7 +73,7 @@
 }
 
 .companyRole{
-    font-size: 1.35rem;
+    font-size: 1.45rem;
     color: var(--primary-color);
     background: linear-gradient(
         to right,
@@ -87,27 +88,10 @@
       background-size: 500% auto;
       animation: textShine 2s linear;
       animation-direction: reverse;
+      animation-delay: 3s;
 }
 
 .timeDuration{
-    color: var(--primary-color);
-    font-size: 0.9rem;
-    background: linear-gradient(
-        to right,
-        #373737 30%,
-        #bbbbbb 70%,
-        #323232 80%
-      );
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-fill-color: transparent;
-      background-size: 500% auto;
-      animation: textShine 2s linear;
-      animation-direction: reverse;
-}
-
-.experienceDescription{
     color: var(--primary-color);
     font-size: 1.1rem;
     background: linear-gradient(
@@ -123,4 +107,24 @@
       background-size: 500% auto;
       animation: textShine 2s linear;
       animation-direction: reverse;
+      animation-delay: 3s;
+}
+
+.experienceDescription{
+    color: var(--primary-color);
+    font-size: 1.25rem;
+    background: linear-gradient(
+        to right,
+        #373737 30%,
+        #bbbbbb 70%,
+        #323232 80%
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-fill-color: transparent;
+      background-size: 500% auto;
+      animation: textShine 2s linear;
+      animation-direction: reverse;
+      animation-delay: 3s;
 }

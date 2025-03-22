@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 3rem;
   padding: 1rem 0;
 }
 
@@ -15,19 +15,19 @@
 }
 
 .landingPageAboutMeSectionContainer{
-  border: 1px solid var(--light-grey);
-  padding: 1rem;
+  /* border: 1px solid var(--light-grey);
+  padding: 1rem; */
   border-radius: 6px;
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 0.1rem;
+  gap: 1rem;
   transition: ease;
   transition-duration: 0.2s;
 }
 
 .landingPageAboutMeSectionContainer:hover{
-  transform: scale(1.02);
+  transform: scale(1.008);
 }
 
 @keyframes textShine {
@@ -40,7 +40,7 @@
 }
 
 .landingPageAboutMeSection span{
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   background: linear-gradient(
     to right,
     #373737 30%,
@@ -54,6 +54,7 @@
   background-size: 500% auto;
   animation: textShine 2s linear;
   animation-direction: reverse;
+  animation-delay: 3s;
 }
 
 .landingPageAboutMeSection:hover{
@@ -62,11 +63,11 @@
 }
 
 .landingPageSalutation{
-  font-size: 1.2rem !important;
+  font-size: 1.5rem !important;
 }
 
 .SectionHeading {
-  font-size: 1.35rem;
+  font-size: 1.5rem;
 }
 
 .ProjectsSection{

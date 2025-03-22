@@ -1,2 +1,2 @@
 export const landingPageSalutation = 'Namaste 🙏🏻 , ';
-export const aboutMeLandingPage = "Myself Nikhil Meena, experienced in building complex and sophisticated application with ease using coding paradigms, have learned to adapt to technologies according to needs. adapt to technologies according, Here’s my Experiences in the industry and some of my personal projects";
+export const aboutMeLandingPage = "Myself Nikhil Meena, experienced in building complex and sophisticated application technologies according to needs. adapt to technologies according, Here’s my Experiences in the industry and some of my personal projects";

@@ -30,12 +30,13 @@ const Navbar = () => {
   return (
     <div className="navbarContainer">
       <div className="logoSection">
-        <Player
+        {/* <Player
           autoplay={true}
           src={NinjaAnimation}
           className="ninjaAnimation"
           loop={true}
-        />
+        /> */}
+        Nikhil Meena
       </div>
       <div className="routesSection">
         {navBarRoutesData.map((data, index) => {
