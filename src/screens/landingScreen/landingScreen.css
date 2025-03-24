@@ -68,6 +68,7 @@
 
 .SectionHeading {
   font-size: 1.5rem;
+  align-self: flex-start;
 }
 
 .ProjectsSection{
