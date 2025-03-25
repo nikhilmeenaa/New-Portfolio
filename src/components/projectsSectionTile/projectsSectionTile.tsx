@@ -21,7 +21,10 @@ const ProjectSectionTile = (data: ProjectTileInterface) => {
       className="projectSectionTile"
       style={{ backgroundColor: data.backgroundColor }}
     >
-      <div className="projectLogoSection">
+      <div
+        className="projectLogoSection"
+        onClick={() => handleGoToLiveDemp(data.liveDemoLink)}
+      >
         <Image src={data.projectLogo} alt={data.projectName} />
       </div>
       <div className="DescriptionSection" style={{ color: data.textColor }}>
@@ -39,9 +42,12 @@ const ProjectSectionTile = (data: ProjectTileInterface) => {
 
         <span
           onClick={() => handleGoToLiveDemp(data.liveDemoLink)}
-          style={{ color: data.textColor }}
+          style={{
+            color: data.backgroundColor,
+            backgroundColor: data.textColor,
+          }}
         >
-          Live Demo
+          Live
         </span>
       </div>
     </div>
