@@ -109,4 +109,12 @@
 .githubLiveDemoSection span{
     font-size: 0.9rem;
     cursor: pointer;
+    border-radius: 7px;
+    padding: 0.5rem 0.5rem;
+    transition: ease;
+    transition-duration: 0.2s;
+}
+
+.githubLiveDemoSection span:hover{
+    opacity: 0.8;
 }
