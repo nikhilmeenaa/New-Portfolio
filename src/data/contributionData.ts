@@ -1,61 +1,4 @@
-const contributionsData: {contributionCount: number, date: string}[] = [
-  {
-    contributionCount: 0,
-    date: "2024-03-17",
-  },
-  {
-    contributionCount: 0,
-    date: "2024-03-18",
-  },
-  {
-    contributionCount: 0,
-    date: "2024-03-19",
-  },
-  {
-    contributionCount: 0,
-    date: "2024-03-20",
-  },
-  {
-    contributionCount: 0,
-    date: "2024-03-21",
-  },
-  {
-    contributionCount: 0,
-    date: "2024-03-22",
-  },
-  {
-    contributionCount: 0,
-    date: "2024-03-23",
-  },
-  {
-    contributionCount: 0,
-    date: "2024-03-24",
-  },
-  {
-    contributionCount: 0,
-    date: "2024-03-25",
-  },
-  {
-    contributionCount: 0,
-    date: "2024-03-26",
-  },
-  {
-    contributionCount: 0,
-    date: "2024-03-27",
-  },
-  {
-    contributionCount: 0,
-    date: "2024-03-28",
-  },
-  {
-    contributionCount: 0,
-    date: "2024-03-29",
-  },
-  {
-    contributionCount: 0,
-    date: "2024-03-30",
-  },
-
+const contributionsData: { contributionCount: number; date: string }[] = [
   {
     contributionCount: 0,
     date: "2024-03-31",
@@ -84,7 +27,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 0,
     date: "2024-04-06",
   },
-
   {
     contributionCount: 0,
     date: "2024-04-07",
@@ -113,7 +55,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 0,
     date: "2024-04-13",
   },
-
   {
     contributionCount: 0,
     date: "2024-04-14",
@@ -142,7 +83,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 0,
     date: "2024-04-20",
   },
-
   {
     contributionCount: 0,
     date: "2024-04-21",
@@ -171,7 +111,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 0,
     date: "2024-04-27",
   },
-
   {
     contributionCount: 0,
     date: "2024-04-28",
@@ -200,7 +139,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 0,
     date: "2024-05-04",
   },
-
   {
     contributionCount: 0,
     date: "2024-05-05",
@@ -229,7 +167,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 1,
     date: "2024-05-11",
   },
-
   {
     contributionCount: 0,
     date: "2024-05-12",
@@ -258,7 +195,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 2,
     date: "2024-05-18",
   },
-
   {
     contributionCount: 0,
     date: "2024-05-19",
@@ -287,7 +223,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 0,
     date: "2024-05-25",
   },
-
   {
     contributionCount: 0,
     date: "2024-05-26",
@@ -316,7 +251,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 0,
     date: "2024-06-01",
   },
-
   {
     contributionCount: 0,
     date: "2024-06-02",
@@ -345,7 +279,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 0,
     date: "2024-06-08",
   },
-
   {
     contributionCount: 0,
     date: "2024-06-09",
@@ -374,7 +307,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 0,
     date: "2024-06-15",
   },
-
   {
     contributionCount: 0,
     date: "2024-06-16",
@@ -403,7 +335,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 0,
     date: "2024-06-22",
   },
-
   {
     contributionCount: 0,
     date: "2024-06-23",
@@ -432,7 +363,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 0,
     date: "2024-06-29",
   },
-
   {
     contributionCount: 0,
     date: "2024-06-30",
@@ -461,7 +391,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 0,
     date: "2024-07-06",
   },
-
   {
     contributionCount: 0,
     date: "2024-07-07",
@@ -490,7 +419,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 0,
     date: "2024-07-13",
   },
-
   {
     contributionCount: 0,
     date: "2024-07-14",
@@ -519,7 +447,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 6,
     date: "2024-07-20",
   },
-
   {
     contributionCount: 6,
     date: "2024-07-21",
@@ -548,7 +475,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 1,
     date: "2024-07-27",
   },
-
   {
     contributionCount: 7,
     date: "2024-07-28",
@@ -577,7 +503,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 0,
     date: "2024-08-03",
   },
-
   {
     contributionCount: 0,
     date: "2024-08-04",
@@ -606,7 +531,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 8,
     date: "2024-08-10",
   },
-
   {
     contributionCount: 0,
     date: "2024-08-11",
@@ -635,7 +559,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 3,
     date: "2024-08-17",
   },
-
   {
     contributionCount: 4,
     date: "2024-08-18",
@@ -664,7 +587,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 5,
     date: "2024-08-24",
   },
-
   {
     contributionCount: 11,
     date: "2024-08-25",
@@ -693,7 +615,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 5,
     date: "2024-08-31",
   },
-
   {
     contributionCount: 11,
     date: "2024-09-01",
@@ -722,7 +643,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 7,
     date: "2024-09-07",
   },
-
   {
     contributionCount: 6,
     date: "2024-09-08",
@@ -751,7 +671,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 0,
     date: "2024-09-14",
   },
-
   {
     contributionCount: 0,
     date: "2024-09-15",
@@ -780,7 +699,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 0,
     date: "2024-09-21",
   },
-
   {
     contributionCount: 0,
     date: "2024-09-22",
@@ -809,7 +727,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 0,
     date: "2024-09-28",
   },
-
   {
     contributionCount: 2,
     date: "2024-09-29",
@@ -838,7 +755,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 0,
     date: "2024-10-05",
   },
-
   {
     contributionCount: 2,
     date: "2024-10-06",
@@ -867,7 +783,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 0,
     date: "2024-10-12",
   },
-
   {
     contributionCount: 0,
     date: "2024-10-13",
@@ -896,7 +811,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 3,
     date: "2024-10-19",
   },
-
   {
     contributionCount: 0,
     date: "2024-10-20",
@@ -925,7 +839,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 0,
     date: "2024-10-26",
   },
-
   {
     contributionCount: 0,
     date: "2024-10-27",
@@ -954,7 +867,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 0,
     date: "2024-11-02",
   },
-
   {
     contributionCount: 0,
     date: "2024-11-03",
@@ -983,7 +895,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 0,
     date: "2024-11-09",
   },
-
   {
     contributionCount: 0,
     date: "2024-11-10",
@@ -1012,7 +923,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 0,
     date: "2024-11-16",
   },
-
   {
     contributionCount: 0,
     date: "2024-11-17",
@@ -1041,7 +951,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 0,
     date: "2024-11-23",
   },
-
   {
     contributionCount: 0,
     date: "2024-11-24",
@@ -1070,7 +979,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 0,
     date: "2024-11-30",
   },
-
   {
     contributionCount: 0,
     date: "2024-12-01",
@@ -1099,7 +1007,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 0,
     date: "2024-12-07",
   },
-
   {
     contributionCount: 0,
     date: "2024-12-08",
@@ -1128,7 +1035,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 0,
     date: "2024-12-14",
   },
-
   {
     contributionCount: 0,
     date: "2024-12-15",
@@ -1157,7 +1063,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 0,
     date: "2024-12-21",
   },
-
   {
     contributionCount: 0,
     date: "2024-12-22",
@@ -1186,7 +1091,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 0,
     date: "2024-12-28",
   },
-
   {
     contributionCount: 0,
     date: "2024-12-29",
@@ -1215,7 +1119,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 0,
     date: "2025-01-04",
   },
-
   {
     contributionCount: 0,
     date: "2025-01-05",
@@ -1244,7 +1147,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 0,
     date: "2025-01-11",
   },
-
   {
     contributionCount: 0,
     date: "2025-01-12",
@@ -1273,7 +1175,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 2,
     date: "2025-01-18",
   },
-
   {
     contributionCount: 0,
     date: "2025-01-19",
@@ -1302,7 +1203,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 4,
     date: "2025-01-25",
   },
-
   {
     contributionCount: 4,
     date: "2025-01-26",
@@ -1331,7 +1231,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 4,
     date: "2025-02-01",
   },
-
   {
     contributionCount: 0,
     date: "2025-02-02",
@@ -1360,7 +1259,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 6,
     date: "2025-02-08",
   },
-
   {
     contributionCount: 0,
     date: "2025-02-09",
@@ -1389,7 +1287,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 0,
     date: "2025-02-15",
   },
-
   {
     contributionCount: 0,
     date: "2025-02-16",
@@ -1418,7 +1315,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 6,
     date: "2025-02-22",
   },
-
   {
     contributionCount: 6,
     date: "2025-02-23",
@@ -1447,7 +1343,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 0,
     date: "2025-03-01",
   },
-
   {
     contributionCount: 0,
     date: "2025-03-02",
@@ -1476,7 +1371,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 5,
     date: "2025-03-08",
   },
-
   {
     contributionCount: 3,
     date: "2025-03-09",
@@ -1505,7 +1399,6 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     contributionCount: 2,
     date: "2025-03-15",
   },
-
   {
     contributionCount: 3,
     date: "2025-03-16",
@@ -1531,8 +1424,40 @@ const contributionsData: {contributionCount: number, date: string}[] = [
     date: "2025-03-21",
   },
   {
-    contributionCount: 4,
+    contributionCount: 10,
     date: "2025-03-22",
+  },
+  {
+    contributionCount: 8,
+    date: "2025-03-23",
+  },
+  {
+    contributionCount: 1,
+    date: "2025-03-24",
+  },
+  {
+    contributionCount: 9,
+    date: "2025-03-25",
+  },
+  {
+    contributionCount: 6,
+    date: "2025-03-26",
+  },
+  {
+    contributionCount: 5,
+    date: "2025-03-27",
+  },
+  {
+    contributionCount: 5,
+    date: "2025-03-28",
+  },
+  {
+    contributionCount: 7,
+    date: "2025-03-29",
+  },
+  {
+    contributionCount: 7,
+    date: "2025-03-30",
   },
 ];
 
