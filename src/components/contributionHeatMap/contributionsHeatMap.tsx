@@ -112,6 +112,14 @@ const MonthHeatMap = ({
     return getDatesForWholeYear()[0].getDay();
   };
 
+  const totalContributionCount = () => {
+    let total = 0;
+    contributionsData.forEach((data) => {
+      total += data.contributionCount;
+    });
+    return total;
+  };
+
   useEffect(() => {
     const tempNumberOfColumns = parseInt(
       ((getStartingGap() + monthDates.length + 6) / 7).toString()
@@ -249,7 +257,7 @@ const MonthHeatMap = ({
             );
           })}
         </div>
-        <div>{contributionsData.length} contributions in the last year</div>
+        <div>{totalContributionCount()} contributions in the last year</div>
       </div>
     </div>
   );

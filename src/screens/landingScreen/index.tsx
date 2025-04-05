@@ -39,7 +39,7 @@ const LandingScreen = () => {
         <MonthHeatMap
           startMonth={4}
           startYear={2024}
-          endMonth={3}
+          endMonth={4}
           endYear={2025}
         />
       </div>
