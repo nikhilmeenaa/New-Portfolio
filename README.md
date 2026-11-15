@@ -22,5 +22,5 @@ All the content is in `src/data/profile.ts`: jobs, apps, side projects, contests
 ## Design notes
 
 - **Type:** one family, [Anek Latin](https://fonts.google.com/specimen/Anek+Latin) by Ek Type. The name uses its narrow width (`font-stretch: 75%`) and everything else uses normal width. The font is self-hosted through Fontsource.
-- **Colour:** the page is neutral, and the photo and app icons supply the colour. The one accent is the lanyard blue from the photo. The site is light only and ignores the system dark setting.
+- **Colour:** the page is neutral, and the photo and app icons supply the colour. The one accent is the lanyard blue from the photo. The site opens in light mode. A button at the top switches to dark, and each visitor's choice is remembered.
 - **The timeline:** this is the only graphic on the page. It puts every role on one axis so the overlaps are visible. The list under it says the same things in words, so the figure is hidden from screen readers.

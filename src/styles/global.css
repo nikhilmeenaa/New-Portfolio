@@ -1,6 +1,6 @@
 /* Tokens. The page itself stays neutral: the photo and the app icons bring the colour.
    The one accent is the blue of the ICPC lanyard in the photo (and, near enough, StopX's shield).
-   Light only, on purpose: the page looks the same whatever the visitor's system theme is. */
+   Light by default; the button at the top switches to dark and the choice is remembered (see Base.astro). */
 :root {
   --paper: #f7f8f6;
   --ink: #141715;
@@ -13,7 +13,18 @@
   --measure: 40em;
   --label: 10rem;
 
-  color-scheme: only light;
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  --paper: #111312;
+  --ink: #e7eae7;
+  --ink-soft: #9ba39d;
+  --rule: #2a2f2b;
+  --accent: #95a2ff;
+  --intern: #5d655f;
+
+  color-scheme: dark;
 }
 
 *,
@@ -97,6 +108,39 @@ main,
   padding-inline: var(--gutter);
 }
 
+/* ---------- Theme toggle ---------- */
+
+.topbar {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 70rem;
+  margin-inline: auto;
+  padding: 1.25rem var(--gutter) 0;
+}
+
+.theme-toggle,
+.copy {
+  font: inherit;
+  line-height: 1;
+  color: var(--ink-soft);
+  background: none;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: color 120ms ease, border-color 120ms ease;
+}
+
+.theme-toggle {
+  font-size: 0.875rem;
+  padding: 0.45em 0.7em 0.35em;
+}
+
+.theme-toggle:hover,
+.copy:hover {
+  color: var(--ink);
+  border-color: var(--ink-soft);
+}
+
 /* ---------- Intro ---------- */
 
 .intro {
@@ -107,7 +151,7 @@ main,
     'copy  photo';
   grid-template-rows: auto 1fr;
   column-gap: clamp(2rem, 6vw, 5rem);
-  padding-block: clamp(2.5rem, 9vw, 6.5rem) clamp(3rem, 7vw, 5rem);
+  padding-block: clamp(1.5rem, 7vw, 5rem) clamp(3rem, 7vw, 5rem);
 }
 
 .intro h1 {
@@ -146,22 +190,9 @@ main,
 }
 
 .copy {
-  font: inherit;
   font-size: 0.8125rem;
-  line-height: 1;
-  color: var(--ink-soft);
-  background: none;
-  border: 1px solid var(--rule);
-  border-radius: 4px;
   padding: 0.3em 0.55em 0.25em;
   margin-left: 0.5rem;
-  cursor: pointer;
-  transition: color 120ms ease, border-color 120ms ease;
-}
-
-.copy:hover {
-  color: var(--ink);
-  border-color: var(--ink-soft);
 }
 
 .portrait {
