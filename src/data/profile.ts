@@ -110,7 +110,7 @@ export const work: Job[] = [
     short: 'martai',
     place: 'Guna, Madhya Pradesh · Remote',
     roles: [{ title: 'Co-founder', type: 'Full-time', start: '2024-11', end: null }],
-    summary: 'A small studio making Android apps for people who want to spend less time on their phones.',
+    summary: 'We build Android apps for focus and self-control. They block Reels and Shorts, adult sites, and any app you’ve put a limit on.',
     showApps: true,
   },
   {
@@ -256,8 +256,8 @@ export const contests: Contest[] = [
   {
     name: 'CodeChef',
     href: 'https://www.codechef.com/users/nikhil_meena',
-    result: 'Highest rating 1964. Global rank 33 of 3,500+ in Exun 2021–22.',
-    note: 'It said 5★ and 2121 until CodeChef re-rated past contests.',
+    result: '5★, highest rating 2121. Global rank 33 of 3,500+ in Exun 2021–22.',
+    note: 'CodeChef later re-rated past contests, so the profile now shows 1964.',
   },
   {
     name: 'Codeforces',
