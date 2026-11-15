@@ -1,0 +1,30 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Page not found · Nikhil Meena" description="This page doesn’t exist.">
+  <main class="missing">
+    <h1>Nothing here</h1>
+    <p class="lede">This address doesn’t match any page. Everything on the site is on one page.</p>
+    <p><a href="/">Go to the home page</a></p>
+  </main>
+</Base>
+
+<style>
+  .missing {
+    padding-block: clamp(4rem, 14vw, 9rem);
+  }
+
+  .missing h1 {
+    font-size: clamp(3rem, 9vw, 6rem);
+    font-stretch: 75%;
+    font-weight: 620;
+    line-height: 0.9;
+    margin-bottom: 1.5rem;
+  }
+
+  .missing .lede {
+    max-width: 30rem;
+    margin-bottom: 1.5rem;
+  }
+</style>

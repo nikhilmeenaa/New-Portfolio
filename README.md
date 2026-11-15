@@ -1,31 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# nikhilmeena.com
 
-## Getting Started
+A one-page record of Nikhil Meena's work, built with [Astro](https://astro.build). It ships static HTML and one small script, which handles the email copy button.
 
-First, run the development server:
+## Run it
 
 ```bash
-pnpm dev
-
+pnpm install
+pnpm dev        # http://localhost:4321
+pnpm build      # static site in dist/
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Changing what it says
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+All the content is in `src/data/profile.ts`: jobs, apps, side projects, contests, talks and education. The page and the timeline are generated from it.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Jobs:** dates are `"YYYY-MM"`, and `end: null` marks the current role. Durations are counted the way LinkedIn counts them.
+- **App figures:** these come from Google Play. When you update them, also change `playCheckedOn`. The page prints that date next to the table and in the footer.
+- **GitHub heatmap:** this is read from `github.com/users/<githubUser>/contributions` each time the site builds. It needs no token, and it includes private-repo contributions because the profile is set to show them. To refresh it, redeploy. If GitHub can't be reached during a build, the section is left out.
+- **Images:** the photo is `src/assets/nikhil-icpc-amritapuri-2023.jpg` and the app icons are in `src/assets/apps/`. Astro resizes both at build time.
 
-## Learn More
+## Design notes
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **Type:** one family, [Anek Latin](https://fonts.google.com/specimen/Anek+Latin) by Ek Type. The name uses its narrow width (`font-stretch: 75%`) and everything else uses normal width. The font is self-hosted through Fontsource.
+- **Colour:** the page is neutral, and the photo and app icons supply the colour. The one accent is the lanyard blue from the photo. The site is light only and ignores the system dark setting.
+- **The timeline:** this is the only graphic on the page. It puts every role on one axis so the overlaps are visible. The list under it says the same things in words, so the figure is hidden from screen readers.

@@ -1,0 +1,64 @@
+---
+// Every role and the degree on one shared time axis, so overlaps are visible at a glance:
+// martai began while Finarb was still a day job, and the internships ran alongside college.
+// The list below the figure carries the same facts in words, so the figure is hidden from screen readers.
+import { work, education } from '../data/profile';
+import { monthIndex, thisMonth } from '../lib/dates';
+
+type Kind = 'role' | 'intern' | 'study' | 'current';
+interface Segment { start: string; end: string | null; kind: Kind }
+interface Row { label: string; segments: Segment[] }
+
+const rows: Row[] = work.map((job) => ({
+  label: job.short,
+  segments: job.roles.map((r) => ({
+    start: r.start,
+    end: r.end,
+    kind: r.end === null ? 'current' : r.type === 'Internship' ? 'intern' : 'role',
+  })),
+}));
+
+const degree = education.find((e) => e.start);
+if (degree) rows.push({ label: degree.short ?? degree.school, segments: [{ start: degree.start!, end: degree.end!, kind: 'study' }] });
+
+const firstYear = Math.min(...rows.flatMap((r) => r.segments.map((s) => Number(s.start.slice(0, 4)))));
+const lastYear = Number(thisMonth.slice(0, 4));
+const years = Array.from({ length: lastYear - firstYear + 1 }, (_, i) => firstYear + i);
+const from = monthIndex(`${firstYear}-01`);
+const span = years.length * 12;
+
+// An ongoing role runs to the end of the current month.
+const pct = (ym: string, isEnd: boolean) => (((monthIndex(ym) - from) + (isEnd ? 1 : 0)) / span) * 100;
+const style = (s: Segment) => {
+  const left = pct(s.start, false);
+  const right = pct(s.end ?? thisMonth, true);
+  return `left:${left.toFixed(3)}%;width:${(right - left).toFixed(3)}%`;
+};
+---
+
+<figure class="timeline" style={`--years:${years.length}`}>
+  <div class="tl" aria-hidden="true">
+    <div class="tl-row tl-axis">
+      <span></span>
+      <div class="tl-track">
+        {years.map((y) => (
+          <span class="tl-year"><span class="long">{y}</span><span class="short">’{String(y).slice(2)}</span></span>
+        ))}
+      </div>
+    </div>
+    {rows.map((row) => (
+      <div class="tl-row">
+        <span class="tl-label">{row.label}</span>
+        <div class="tl-track">
+          {row.segments.map((s) => <span class={`tl-bar ${s.kind}`} style={style(s)}></span>)}
+        </div>
+      </div>
+    ))}
+  </div>
+  <figcaption>
+    <span class="key"><i class="tl-bar role"></i>Job</span>
+    <span class="key"><i class="tl-bar intern"></i>Internship</span>
+    <span class="key"><i class="tl-bar study"></i>College</span>
+    <span class="key"><i class="tl-bar current"></i>Now</span>
+  </figcaption>
+</figure>

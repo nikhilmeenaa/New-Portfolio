@@ -1,0 +1,246 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Timeline from '../components/Timeline.astro';
+import Contributions from '../components/Contributions.astro';
+import photo from '../assets/nikhil-icpc-amritapuri-2023.jpg';
+import {
+  apps, contests, education, email, githubUser, inTheWorks, links, playCheckedOn, projects, talks, work,
+} from '../data/profile';
+import { duration, longDate, range } from '../lib/dates';
+import { getCalendar } from '../lib/github';
+
+const totalDuration = (roles: { start: string; end: string | null }[]) =>
+  duration(roles[roles.length - 1].start, roles[0].end);
+
+const calendar = await getCalendar(githubUser);
+---
+
+<Base
+  title="Nikhil Meena"
+  description="Co-founder of martai, a small studio making Android apps for people who want to spend less time on their phones. Before that, software engineer at Finarb."
+>
+  <main>
+    <header class="intro">
+      <h1>Nikhil Meena</h1>
+      <figure class="portrait">
+        <Image
+          src={photo}
+          alt="Nikhil, smiling with his arms crossed, in a yellow checked shirt with a contest lanyard, under a palm tree."
+          widths={[400, 480]}
+          quality={74}
+          sizes="(min-width: 60rem) 24rem, calc(100vw - 2rem)"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <figcaption>At the ICPC Amritapuri regionals, 2023.</figcaption>
+      </figure>
+      <div class="intro-copy">
+        <p class="lede">
+          I co-founded <a href={links.martai}>martai</a>, a small studio in Guna, Madhya Pradesh. We make Android apps
+          for people who want to spend less time on their phones. Four of them are on Google Play, with more than
+          60,000 downloads between them.
+        </p>
+        <p class="lede">
+          Before this I was a software engineer at Finarb in Kolkata. In college I did a lot of competitive programming.
+        </p>
+        <p class="contact">
+          <a href={`mailto:${email}`}>{email}</a>
+          <button type="button" class="copy" data-copy={email} aria-label="Copy email address">Copy</button>
+          <span class="sep" aria-hidden="true">·</span>
+          <a href={links.github}>GitHub</a>
+          <span class="sep" aria-hidden="true">·</span>
+          <a href={links.linkedin}>LinkedIn</a>
+        </p>
+      </div>
+    </header>
+
+    <section class="block" aria-labelledby="work">
+      <h2 id="work">Work</h2>
+      <div class="block-body">
+        <Timeline />
+        <ol class="jobs">
+          {work.map((job) => (
+            <li class="job">
+              <div class="job-head">
+                <h3>{job.url ? <a href={job.url}>{job.company}</a> : job.company}</h3>
+                {job.roles.length > 1 && <span class="meta">{totalDuration(job.roles)}</span>}
+              </div>
+              <p class="meta place">{job.place}</p>
+              <ul class="roles">
+                {job.roles.map((r) => (
+                  <li>
+                    <span class="role">{r.title} <span class="meta">· {r.type}</span></span>
+                    <span class="meta when">{range(r.start, r.end)} · {duration(r.start, r.end)}</span>
+                  </li>
+                ))}
+              </ul>
+              {job.summary && <p class="summary">{job.summary}</p>}
+              {job.showApps && (
+                <>
+                  <table class="apps">
+                    <caption>On Google Play</caption>
+                    <thead>
+                      <tr>
+                        <th scope="col" colspan="2">App</th>
+                        <th scope="col" class="num">Downloads</th>
+                        <th scope="col" class="num">Rating</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {apps.map((app) => (
+                        <tr>
+                          <td class="icon">
+                            <Image src={app.icon} alt="" width={44} height={44} densities={[1, 2]} quality={85} />
+                          </td>
+                          <td>
+                            <a class="app-name" href={app.play}>{app.name}</a>
+                            {app.playName && <span class="meta"> (listed as {app.playName})</span>}
+                            <span class="app-does">{app.does}</span>
+                            <span class="meta app-stats">
+                              {app.downloads} downloads · {app.rating.toFixed(1)}★ from {app.reviews} reviews
+                            </span>
+                          </td>
+                          <td class="num">{app.downloads}</td>
+                          <td class="num">
+                            {app.rating.toFixed(1)}★
+                            <span class="meta reviews">{app.reviews} reviews</span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                  <p class="meta source">Figures as shown on Google Play on {longDate(playCheckedOn)}.</p>
+                  <h4 class="soon-title">In the works</h4>
+                  <ul class="soon">
+                    {inTheWorks.map((a) => (
+                      <li>
+                        <span class="soon-name">{a.name}</span>
+                        <span class="soon-does">{a.does} {a.status}.</span>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
+    {calendar && (
+      <section class="block" aria-labelledby="github">
+        <h2 id="github">GitHub</h2>
+        <div class="block-body">
+          <Contributions calendar={calendar} profile={links.github} />
+        </div>
+      </section>
+    )}
+
+    <section class="block" aria-labelledby="projects">
+      <h2 id="projects">On the side</h2>
+      <div class="block-body">
+        <ul class="ledger">
+          {projects.map((p) => (
+            <li>
+              <span class="meta year">{p.year}</span>
+              <div>
+                <h3>{p.name} <span class="meta">· {p.kind}</span></h3>
+                <p>{p.does}</p>
+                <p class="links">
+                  {p.links.map((l, i) => (
+                    <>
+                      {i > 0 && <span class="sep" aria-hidden="true">·</span>}
+                      <a href={l.href}>{l.label}</a>
+                    </>
+                  ))}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="contests">
+      <h2 id="contests">Contests</h2>
+      <div class="block-body">
+        <ul class="ledger">
+          {contests.map((c) => (
+            <li>
+              <h3 class="ledger-key">{c.href ? <a href={c.href}>{c.name}</a> : c.name}</h3>
+              <div>
+                <p>{c.result}</p>
+                {c.note && <p class="meta">{c.note}</p>}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="talks">
+      <h2 id="talks">Talks</h2>
+      <div class="block-body">
+        <ul class="ledger">
+          {talks.map((t) => (
+            <li>
+              <span class="meta year">{longDate(t.date)}</span>
+              <div>
+                <h3>{t.title}</h3>
+                <p>{t.format} at the {t.where}.</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="education">
+      <h2 id="education">Education</h2>
+      <div class="block-body">
+        <ul class="ledger">
+          {education.map((e) => (
+            <li>
+              <span class="meta year">{e.years}</span>
+              <div>
+                <h3>{e.school}</h3>
+                {e.detail && <p>{e.detail}</p>}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="end">
+    <p class="end-line">That’s the whole page.</p>
+    <p class="meta">
+      <a href={`mailto:${email}`}>{email}</a>
+      <span class="sep" aria-hidden="true">·</span>
+      <a href={links.github}>GitHub</a>
+      <span class="sep" aria-hidden="true">·</span>
+      <a href={links.linkedin}>LinkedIn</a>
+      <span class="sep" aria-hidden="true">·</span>
+      Updated {longDate(playCheckedOn)}
+    </p>
+  </footer>
+
+  <script>
+    for (const button of document.querySelectorAll<HTMLButtonElement>('button[data-copy]')) {
+      button.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(button.dataset.copy!);
+          button.textContent = 'Copied';
+        } catch {
+          // No clipboard access: select the address so it can be copied by hand.
+          const address = button.previousElementSibling;
+          if (address) getSelection()?.selectAllChildren(address);
+          button.textContent = 'Selected';
+        }
+        setTimeout(() => (button.textContent = 'Copy'), 1600);
+      });
+    }
+  </script>
+</Base>

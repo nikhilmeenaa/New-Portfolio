@@ -1,0 +1,48 @@
+---
+// A year of GitHub contributions, one square per day, weeks as columns starting on Sunday like GitHub's own.
+// Drawn in the page's accent instead of GitHub green so it reads as part of this page.
+import type { Calendar } from '../lib/github';
+import { longDate } from '../lib/dates';
+
+interface Props {
+  calendar: Calendar;
+  profile: string;
+}
+
+const { calendar, profile } = Astro.props;
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+// GitHub's calendar starts on a Sunday, so every 7 days is one column.
+const weeks = Math.ceil(calendar.days.length / 7);
+
+// A month label sits over the first week that starts in that month; skip one that would crowd the next.
+const labels: { col: number; text: string }[] = [];
+for (let col = 0; col < weeks; col++) {
+  const month = Number(calendar.days[col * 7].date.slice(5, 7)) - 1;
+  const prev = col > 0 ? Number(calendar.days[(col - 1) * 7].date.slice(5, 7)) - 1 : -1;
+  if (month !== prev) labels.push({ col, text: MONTHS[month] });
+}
+if (labels.length > 1 && labels[1].col - labels[0].col < 3) labels.shift();
+
+const plural = (n: number, word: string) => `${n.toLocaleString('en-US')} ${word}${n === 1 ? '' : 's'}`;
+const summary = `${plural(calendar.total, 'contribution')} in the last year, on ${calendar.activeDays} of ${calendar.days.length} days.`;
+---
+
+<figure class="contrib" style={`--weeks:${weeks}`}>
+  <div class="contrib-grid" role="img" aria-label={summary}>
+    <div class="contrib-months" aria-hidden="true">
+      {labels.map((l) => <span style={`grid-column:${l.col + 1}`}>{l.text}</span>)}
+    </div>
+    <div class="contrib-days" aria-hidden="true">
+      {calendar.days.map((d) => (
+        <span class={`l${d.level}`} title={`${plural(d.count, 'contribution')} on ${longDate(d.date)}`}></span>
+      ))}
+    </div>
+  </div>
+  <figcaption>
+    <span>{summary} <a href={profile}>GitHub profile</a></span>
+    <span class="contrib-key" aria-hidden="true">
+      Less <i class="l0"></i><i class="l1"></i><i class="l2"></i><i class="l3"></i><i class="l4"></i> More
+    </span>
+  </figcaption>
+</figure>
