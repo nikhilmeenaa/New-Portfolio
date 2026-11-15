@@ -11,5 +11,8 @@
   "dependencies": {
     "@fontsource-variable/anek-latin": "^5.3.0",
     "astro": "^7.4.12"
+  },
+  "engines": {
+    "node": ">=22.23.4"
   }
 }
