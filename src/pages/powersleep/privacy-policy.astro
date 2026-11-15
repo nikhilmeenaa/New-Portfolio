@@ -1,0 +1,183 @@
+---
+// The PowerSleep app's privacy policy. Its URL is linked from the app's store listing, so it must stay at
+// /powersleep/privacy-policy. The policy text is unchanged from the version published on 1 Nov 2025.
+import Base from '../../layouts/Base.astro';
+
+const commitments = [
+  {
+    title: 'No Data Collection',
+    text: 'PowerSleep does not collect, store, or transmit any of your personal data or usage information.',
+  },
+  {
+    title: 'No Login Required',
+    text: 'The app is completely open and accessible to all users. No account creation, no login, no credentials needed.',
+  },
+  {
+    title: 'No Tracking',
+    text: 'We do not track your activities, app usage patterns, or any behavioral data. Your privacy is fully respected.',
+  },
+  {
+    title: 'No Ads, No Sharing',
+    text: 'PowerSleep is completely ad-free and does not share any data with third parties. There’s nothing to share because we don’t collect anything.',
+  },
+];
+---
+
+<Base title="PowerSleep Privacy Policy" description="Privacy policy for the PowerSleep Android app.">
+  <main class="policy">
+    <p class="back"><a href="/">← Nikhil Meena</a></p>
+    <h1>PowerSleep Privacy Policy</h1>
+    <p class="lede">Your privacy matters to us. Here’s how PowerSleep protects it.</p>
+    <p class="meta">Last updated 1 November 2025</p>
+
+    <h2>About PowerSleep</h2>
+    <p>
+      PowerSleep is a bedtime enforcement application designed to help you maintain a healthy sleep schedule and avoid
+      distractions during your rest time.
+    </p>
+    <p>With PowerSleep, you can:</p>
+    <ul>
+      <li>Select your preferred bedtime and wake-up time</li>
+      <li>Choose which apps you want to allow during your sleep hours</li>
+      <li>Restrict access to distracting apps, helping you maintain focus on rest and avoid late-night screen time</li>
+    </ul>
+    <p>
+      Our goal is to help you achieve peaceful, uninterrupted sleep by providing you with tools to manage your digital
+      distractions effectively.
+    </p>
+
+    <h2>Our Privacy Commitment</h2>
+    <dl>
+      {commitments.map((c) => (
+        <>
+          <dt>{c.title}</dt>
+          <dd>{c.text}</dd>
+        </>
+      ))}
+    </dl>
+
+    <h2>Privacy Policy Details</h2>
+
+    <h3>1. Data Collection</h3>
+    <p>
+      <strong>We do not collect any data.</strong> PowerSleep operates entirely locally on your device. We do not
+      collect, store, or transmit any personal information, app usage data, sleep schedules, or any other user data.
+    </p>
+
+    <h3>2. Account &amp; Authentication</h3>
+    <p>
+      PowerSleep requires no user accounts, no login credentials, and no registration process. The app is completely
+      open and accessible to everyone, ensuring that there is no personal information associated with your usage.
+    </p>
+
+    <h3>3. Third-Party Services</h3>
+    <p>
+      PowerSleep does not integrate with any third-party analytics services, advertising networks, or data brokers. We
+      do not use cookies, trackers, or any other monitoring technologies.
+    </p>
+
+    <h3>4. Advertising</h3>
+    <p>
+      PowerSleep is completely ad-free. We do not display any advertisements, sponsored content, or promotional
+      materials within the application.
+    </p>
+
+    <h3>5. Data Sharing</h3>
+    <p>
+      Since we do not collect any data, there is nothing to share. PowerSleep does not share, sell, or disclose any
+      information to third parties, partners, or affiliates.
+    </p>
+
+    <h3>6. Local Data Storage</h3>
+    <p>
+      All settings you configure within PowerSleep (such as bedtime, wake-up time, and app selections) are stored
+      locally on your device only. This data never leaves your device and is not accessible to us or any third parties.
+    </p>
+
+    <h3>7. Changes to This Policy</h3>
+    <p>
+      If we ever make changes to our privacy practices, we will update this policy accordingly. However, our core
+      commitment to privacy will always remain: no data collection, no tracking, and complete user privacy.
+    </p>
+
+    <h3>8. Contact Us</h3>
+    <p>
+      If you have any questions or concerns about this privacy policy, please feel free to reach out. We are committed
+      to transparency and will be happy to address any inquiries.
+    </p>
+
+    <p class="sign-off">PowerSleep - Helping you sleep better, one night at a time.</p>
+  </main>
+</Base>
+
+<style>
+  .policy {
+    max-width: 44rem;
+    padding-block: clamp(2.5rem, 8vw, 5rem) 5rem;
+  }
+
+  .back {
+    margin-bottom: 2.5rem;
+    font-size: 0.9375rem;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 7vw, 4.25rem);
+    font-stretch: 75%;
+    font-weight: 620;
+    line-height: 0.95;
+    margin-bottom: 1rem;
+    text-wrap: balance;
+  }
+
+  .lede {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  h2 {
+    font-size: 1.375rem;
+    font-weight: 600;
+    margin: 2.75rem 0 0.75rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  h3 {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.35rem;
+  }
+
+  p + p,
+  ul + p {
+    margin-top: 0.75rem;
+  }
+
+  ul {
+    margin: 0.75rem 0 0;
+    padding-left: 1.25rem;
+  }
+
+  li + li {
+    margin-top: 0.25rem;
+  }
+
+  dl {
+    margin: 0;
+  }
+
+  dt {
+    font-weight: 600;
+    margin-top: 1rem;
+  }
+
+  dd {
+    margin: 0.15rem 0 0;
+  }
+
+  .sign-off {
+    margin-top: 3rem;
+    color: var(--ink-soft);
+  }
+</style>
